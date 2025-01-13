@@ -1,11 +1,7 @@
+import "@testing-library/jest-dom"
+
 import { server } from "./mocks/server"
 
-// Establish API mocking before all tests.
-beforeAll(() => server.listen({ onUnhandledRequest: "warn" }))
-
-// Reset any request handlers that are declared as a part of tests
-// (so they don't affect other tests).
+beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
-
-// Clean up once the tests are done.
 afterAll(() => server.close())
