@@ -1,7 +1,7 @@
 import { http, HttpResponse } from "msw"
 import { server } from "../../../mocks/server"
 import OrderEntry from "../OrderEntry"
-import { render, screen, logRoles } from "@testing-library/react"
+import { render, screen } from "../../../test-utils/test-library-utils"
 
 test("handles error for scoops and toppings routes", async () => {
   server.resetHandlers(
